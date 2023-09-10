@@ -248,6 +248,15 @@
     background-color: #007bff; /* Change the background color of active dropdown items */
 }
 
+.custom-navbar-horizontal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row; 
+}
+.custom-navbar-horizontal .nav-item {
+    margin-right: 10px;
+}
 
         </style>
 </head>
@@ -286,7 +295,25 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                Screen Observation
+                <div class="card-header custom-navbar w-100">
+                    <ul class="navbar-nav custom-navbar-horizontal">
+                        <li class="nav-item">
+                            <a class="nav-link" href="meteorological.html">Cloud</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="lastone.html">Office</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Screen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="outdoor.html">Enclosure</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="outdoor.html">Outdoor</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="card-body">
                 <form id="screenObservationForm">
