@@ -58,90 +58,100 @@
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <div class="card-header custom-navbar w-100">
-                    <ul class="navbar-nav custom-navbar-horizontal">
-                        <li class="nav-item">
-                            <a class="nav-link" href="meteorological.html">Cloud</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="lastone.html">Office</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Screen</a>
-                        </li>
-                    
-                    </ul>
-                  
-                </div>
-                <div  class="card-header custom-navbar w-100">
-                    <ul  class="navbar-nav custom-navbar-horizontal">
-                        <li class="nav-item">
-                            <a class="nav-link" href="outdoor.html">Enclosure</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="outdoor.html">Outdoor</a>
-                        </li>
-                    </ul>
-                </div>
+                <h5 class="card-title">Station Weather Report for Aviation (METAR/SPECI)</h5>
             </div>
             <div class="card-body">
-                <form id="cloudObservationForm">
-                    <!-- Total amount of all clouds (oktas) -->
-                    <div class="form-group">
-                        <label for="totalClouds">Total Amount of All Clouds (oktas)</label>
-                        <input type="number" class="form-control" id="totalClouds" name="totalClouds" placeholder="Enter total clouds oktas">
+                <!-- Form for METAR/SPECI Weather Report -->
+                <form>
+                    <!-- GGDD -->
+                    <!-- ... (Other fields) -->
+                    <!-- HT (CCCC) -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">HT (CCCC)</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="ht_cccc_input" id="ht_cccc_input" placeholder="HT (CCCC)" oninput="updateHTOptions()">
+                        </div>
                     </div>
-                    <!-- Total amount of low clouds (oktas) -->
-                    <div class="form-group">
-                        <label for="lowClouds">Total Amount of Low Clouds (oktas)</label>
-                        <input type="number" class="form-control" id="lowClouds" name="lowClouds" placeholder="Enter low clouds oktas">
+                    <!-- Select HT Option -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Select HT Option</label>
+                        <div class="col-sm-9">
+                            <select id="htSelect" name="ht_cccc">
+                                <!-- Options will be dynamically added here -->
+                            </select>
+                        </div>
                     </div>
-                    <!-- Cloud Type Section -->
-                    <div class="form-group">
-                        <label for="cloudType">Cloud Type</label>
-                        <select class="form-control" id="cloudType" name="cloudType">
-                            <option value="Cumulus">Cumulus</option>
-                            <option value="Stratus">Stratus</option>
-                            <option value="Cirrus">Cirrus</option>
-                            <option value="Nimbus">Nimbus</option>
-                            <option value="Altocumulus">Altocumulus</option>
-                            <option value="Cirrostratus">Cirrostratus</option>
-                            <option value="Cumulonimbus">Cumulonimbus</option>
-                            <option value="Stratocumulus">Stratocumulus</option>
-                            <option value="Cirrocumulus">Cirrocumulus</option>
-                            <option value="Cirrostratus">Cirrostratus</option>
-                            <option value="Altostratus">Altostratus</option>
-                            <option value="Stratus Fractus">Stratus Fractus</option>
-                            <option value="Cumulus Congestus">Cumulus Congestus</option>
-                            <option value="Cirrus Uncinus">Cirrus Uncinus</option>
-                            <!-- Add more cloud types as needed -->
-                        </select>
+                    <!-- METAR/SPECI -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">METAR/SPECI</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="metar_speci" placeholder="METAR/SPECI">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="cloudOkta">Cloud Oktas</label>
-                        <input type="number" class="form-control" id="cloudOkta" name="cloudOkta" placeholder="Enter cloud oktas">
+                    <!-- ... (Other fields) -->
+                    <!-- Observer's name -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Observer's name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="observer_name" placeholder="Observer's name">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="cloudHeight">Cloud Height</label>
-                        <input type="text" class="form-control" id="cloudHeight" name="cloudHeight" placeholder="Enter cloud height">
+                    <!-- Forecaster's name -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Forecaster's name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="forecaster_name" placeholder="Forecaster's name">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="cloudColor">Cloud Color Code</label>
-                        <input type="text" class="form-control" id="cloudColor" name="cloudColor" placeholder="Enter cloud color code">
+                    <!-- TREND -->
+                    <hr>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">TREND</label>
                     </div>
-                    <div class="form-group">
-                        <label for="cloudCategory">Cloud Category (LOW, MEDIUM, HIGH)</label>
-                        <select class="form-control" id="cloudCategory" name="cloudCategory">
-                            <option value="LOW">LOW</option>
-                            <option value="MEDIUM">MEDIUM</option>
-                            <option value="HIGH">HIGH</option>
-                        </select>
+                    <!-- Additional fields for trend -->
+                    <!-- ... (Add additional fields here) -->
+                    <!-- Submit Button -->
+                    <div class="form-group row">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
     </div>
+    
+    <script>
+        function updateHTOptions() {
+            const inputElement = document.getElementById("ht_cccc_input");
+            const selectElement = document.getElementById("htSelect");
+            
+            // Get the user's input from the HT (CCCC) input field
+            const inputValue = inputElement.value;
+            
+            // Clear existing options in the select element
+            selectElement.innerHTML = "";
+            
+            // Create an option element for each value
+            const options = ["CCCC", "YYGGggZ", "(dddmGf_f_jKT)", "(D<sub>m</sub>) (D<sub>m</sub>) (D<sub>m</sub>) V (D<sub>m</sub>) (D<sub>m</sub>) (D<sub>m</sub>)", "(VVVV or CAVOK)", "(V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (D<sub>v</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (D<sub>v</sub>)", "(V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (D<sub>v</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (D<sub>v</sub>)", "(R(D<sub>r</sub>)(D<sub>r</sub>)/VVVVVVV)", "(W<sup>2</sup>) (W<sup>2</sup>)", "((N<sub>r</sub>)(N<sub>r</sub>)(N<sub>r</sub>)(R<sub>s</sub>)(R<sub>s</sub>)(R<sub>s</sub>))", "(VV(H<sub>s</sub>)(H<sub>s</sub>)(H<sub>s</sub>))", "(NSC or SKC)", "TT / TdTd", "QNH_hPa", "QFE_hPa", "QNE (it)", "(REw'w')", "(WS,R(d<sub>n</sub>)(d<sub>n</sub>) or WS ALL RWY)"];
+            
+            options.forEach(optionValue => {
+                const option = document.createElement("option");
+                option.value = optionValue;
+                option.textContent = optionValue;
+                
+                // Add the option to the select element
+                selectElement.appendChild(option);
+            });
+            
+            // Select the option that matches the input value
+            selectElement.value = inputValue;
+        }
+        
+        // Initial update of options
+        updateHTOptions();
+    </script>
+    
 
 
     <!-- Include Select2 JS -->

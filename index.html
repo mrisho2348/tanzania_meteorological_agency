@@ -20,7 +20,6 @@
         </style>
 </head>
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light custom-navbar">
         <a class="navbar-brand" href="#">Observation Slip</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -30,125 +29,132 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="lastone.html">Home <span class="sr-only">observation slip</span></a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="meteorological.html">Cloud</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Aviation </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="lastone.html">Office</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Screen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="outdoor.html">Enclosure</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="outdoor.html">Outdoor</a>
-                </li>
+               
             </ul>
         </div>
     </nav>
-    
+
     <div class="container mt-4">
         <div class="card">
             <div class="card-header">
-                <div class="card-header custom-navbar w-100">
-                    <ul class="navbar-nav custom-navbar-horizontal">
-                        <li class="nav-item">
-                            <a class="nav-link" href="meteorological.html">Cloud</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="lastone.html">Office</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Screen</a>
-                        </li>
-                    
-                    </ul>
-                  
-                </div>
-                <div  class="card-header custom-navbar w-100">
-                    <ul  class="navbar-nav custom-navbar-horizontal">
-                        <li class="nav-item">
-                            <a class="nav-link" href="outdoor.html">Enclosure</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="outdoor.html">Outdoor</a>
-                        </li>
-                    </ul>
-                </div>
+                <h5 class="card-title">Station Weather Report for Aviation (METAR/SPECI)</h5>
             </div>
             <div class="card-body">
-                <form id="screenObservationForm">
-                    <!-- Dry Bulb Temperature -->
-                    <div class="form-group">
-                        <label for="dryBulb">Dry Bulb Temperature (°C)</label>
-                        <input type="number" class="form-control" id="dryBulb" name="dryBulb" placeholder="Enter dry bulb temperature">
-                    </div>
-                    <!-- Wet Bulb Temperature -->
-                    <div class="form-group">
-                        <label for="wetBulb">Wet Bulb Temperature (°C)</label>
-                        <input type="number" class="form-control" id="wetBulb" name="wetBulb" placeholder="Enter wet bulb temperature">
-                    </div>
-                    <!-- Maximum Temperature with Read and Reset options -->
-                    <div class="form-group">
-                        <label for="maxTemperature">Maximum Temperature (°C)</label>
-                        <div class="input-group">
-                            <input type="number" class="form-control" id="maxTemperature" name="maxTemperature" placeholder="Enter maximum temperature">
-                            <div class="input-group-append">
-                                <button type="button" class="btn btn-info" hx-get="/read-max-temperature">Read</button>
-                                <button type="button" class="btn btn-danger" hx-get="/reset-max-temperature">Reset</button>
-                            </div>
+                <!-- Form for METAR/SPECI Weather Report -->
+                <form>
+                    <!-- GGDD -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">GGDD</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="ggdd" placeholder="GGDD">
                         </div>
                     </div>
-                    <!-- Minimum Temperature with Read and Reset options -->
-                    <div class="form-group">
-                        <label for="minTemperature">Minimum Temperature (°C)</label>
-                        <div class="input-group">
-                            <input type="number" class="form-control" id="minTemperature" name="minTemperature" placeholder="Enter minimum temperature">
-                            <div class="input-group-append">
-                                <button type="button" class="btn btn-info" hx-get="/read-min-temperature">Read</button>
-                                <button type="button" class="btn btn-danger" hx-get="/reset-min-temperature">Reset</button>
-                            </div>
+                    <!-- Date and Time of Origin -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Date (Date/Time of Origin)</label>
+                        <div class="col-sm-9">
+                            <input type="datetime-local" class="form-control" name="date" placeholder="Date/Time">
                         </div>
                     </div>
-                    <!-- Piche with Read and Reset options -->
-                    <div class="form-group">
-                        <label for="piche">Piche</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="piche" name="piche" placeholder="Enter Piche">
-                            <div class="input-group-append">
-                                <button type="button" class="btn btn-info" hx-get="/read-piche">Read</button>
-                                <button type="button" class="btn btn-danger" hx-get="/reset-piche">Reset</button>
-                            </div>
+                    <!-- HT (YMYX) -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">HT (YMYX)</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="ht" placeholder="HT">
                         </div>
                     </div>
-                           <!-- Remarks Section -->
-                           <div class="form-group">
-                            <label>Remarks</label>
-                            <div class="input-group">
-                                <input type="number" class="form-control" placeholder="Dew Point (DP) in °C">
-                                <input type="number" class="form-control" placeholder="Vapour Pressure (VP) in hPa">
-                                <input type="number" class="form-control" placeholder="Relative Humidity (RH) in %">
-                            </div>
-                        </div>
-                    <!-- Time Marks (1200 UTC) with Thermo, Hygro, Rain Rec -->
-                    <div class="form-group">
-                        <label>Time Marks (1200 UTC)</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Thermo">
-                            <input type="text" class="form-control" placeholder="Hygro">
-                            <input type="text" class="form-control" placeholder="Rain Rec">
+                    <!-- Temperature (°C) -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Temperature (°C)</label>
+                        <div class="col-sm-9">
+                            <input type="number" class="form-control" name="temperature" placeholder="Temperature">
                         </div>
                     </div>
+                    <!-- Separating Line -->
+                    <hr>
+                    <!-- METAR/SPECI -->
+                   <h4 style="text-align: center;">METAR/SPECI</h4>
+                    <!-- HT (CCCC) -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">HT (CCCC)</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="ht_cccc" placeholder="HT (CCCC)">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">SELECT HT</label>
+                        <div class="col-sm-9">
+                            <select id="htSelect">
+                                <option value="CCCC">CCCC</option>
+                                <option value="YYGGggZ">YYGGggZ</option>
+                                <option value="dddmGf_f_jKT">(dddmGf_f_jKT)</option>
+                                <option value="dmdmdmVdmdmdm">(D<sub>m</sub>) (D<sub>m</sub>) (D<sub>m</sub>) V (D<sub>m</sub>) (D<sub>m</sub>) (D<sub>m</sub>)</option>
+                                <option value="VVVV or CAVOK">(VVVV or CAVOK)</option>
+                                <option value="VNVNVNDv">(V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (D<sub>v</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (D<sub>v</sub>)</option>
+                                <option value="VNVNVNdVNVNVNdv">(V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (D<sub>v</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (V<sub>n</sub>) (D<sub>v</sub>)</option>
+                                <option value="RddRdd/VVVVVVV">(R(D<sub>r</sub>)(D<sub>r</sub>)/VVVVVVV)</option>
+                                <option value="Wsuperscript2Wsuperscript2">(W<sup>2</sup>) (W<sup>2</sup>)</option>
+                                <option value="NrNrNrsR">((N<sub>r</sub>)(N<sub>r</sub>)(N<sub>r</sub>)(R<sub>s</sub>)(R<sub>s</sub>)(R<sub>s</sub>))</option>
+                                <option value="VVHsHsHs">(VV(H<sub>s</sub>)(H<sub>s</sub>)(H<sub>s</sub>))</option>
+                                <option value="NSC or SKC">(NSC or SKC)</option>
+                                <option value="TT / TdTd">TT / TdTd</option>
+                                <option value="QPPPP">(Q(P<sub>n</sub>)(P<sub>n</sub>)(P<sub>n</sub>)(P<sub>n</sub>))</option>
+                                <optgroup label="QNH (hPa)">
+                                    <option value="QNH_hPa">QNH_hPa</option>
+                                </optgroup>
+                                <optgroup label="QFE (hPa)">
+                                    <option value="QFE_hPa">QFE_hPa</option>
+                                </optgroup>
+                                <option value="QNE (it)">QNE (it)</option>
+                                <option value="REww">(REw'w')</option>
+                                <option value="WSRdd">(WS,R(d<sub>n</sub>)(d<sub>n</sub>) or WS ALL RWY)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label text-center" style="text-align: center;">TREND</label>
+                    </div>
+                  <hr>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <!-- ... (Other fields) -->
+                    <!-- Observer's name -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Observer's name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="observer_name" placeholder="Observer's name">
+                        </div>
+                    </div>
+                    <!-- Forecaster's name -->
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Forecaster's name</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="forecaster_name" placeholder="Forecaster's name">
+                        </div>
+                    </div>
+                    <!-- TREND -->
+                    <hr>
+                  
+                    <!-- Additional fields for trend -->
+                    <!-- ... (Add additional fields here) -->
+                    <!-- Submit Button -->
+                    <div class="form-group row">
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+               
                 </form>
             </div>
         </div>
     </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
     <!-- JavaScript code to handle htmx interactions -->
     <script>
