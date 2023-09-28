@@ -90,7 +90,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">SELECT HT</label>
                         <div class="col-sm-9">
-                            <select id="htSelect">
+                            <select id="htSelect" class="form-control" id="htSelect" name="htSelect">
                                 <option value="CCCC">CCCC</option>
                                 <option value="YYGGggZ">YYGGggZ</option>
                                 <option value="dddmGf_f_jKT">(dddmGf_f_jKT)</option>
@@ -182,5 +182,12 @@
             }
         });
     </script>
+     <!-- JavaScript code to handle htmx interactions -->
+     <script>
+        $(document).ready(function() {
+            $('#htSelect').select2();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/js/select2.min.js"></script>
 </body>
 </html>
