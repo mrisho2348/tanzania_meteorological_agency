@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled HTML Form with Bootstrap</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+    <!-- Include Select2 CSS with a theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0-rc.0/css/select2.min.css">
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Link to Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pzjw8f+ua7F8D6K0qFvrKpPyG6Yfo3/z5O+5P4l5W9F2IHObd5xQzddD5F5T0CJS9" crossorigin="anonymous">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Button Styles */
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title" >
+                            <h5 class="card-title" >(a)Clouds</h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                       
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="totalClouds">Total Amount of All Clouds (oktas)</label>
+                                    <input type="number" class="form-control" id="totalClouds" name="totalClouds" placeholder="Enter total clouds oktas">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="lowClouds">Total Amount of Low Clouds (oktas)</label>
+                                    <input type="number" class="form-control" id="lowClouds" name="lowClouds" placeholder="Enter low clouds oktas">
+                                </div>
+                            </div>
+                        </div>
+                       <div class="row">
+                        <div class="col-lg-12">
+                            <form>
+                                <table>
+                                    <tr>
+                                        <th colspan="4" style="background-color: #0056b3;">LOW</th>
+                                        <th colspan="4"  style="background-color: #992266;">MEDIUM</th>
+                                        <th colspan="4"  style="background-color: #0056b3;">HIGH</th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" class="form-control" placeholder="Type"></td>
+                                        <td><input type="text" class="form-control" placeholder="Oktas"></td>
+                                        <td><input type="text" class="form-control" placeholder="Height"></td>
+                                        <td><input type="text" class="form-control" placeholder="Color Code"></td>
+                                        
+                                        <td><input type="text" class="form-control" placeholder="Type"></td>
+                                        <td><input type="text" class="form-control" placeholder="Oktas"></td>
+                                        <td><input type="text" class="form-control" placeholder="Height"></td>
+                                        <td><input type="text" class="form-control" placeholder="Color Code"></td>
+                                        
+                                        <td><input type="text" class="form-control" placeholder="Type"></td>
+                                        <td><input type="text" class="form-control" placeholder="Oktas"></td>
+                                        <td><input type="text" class="form-control" placeholder="Height"></td>
+                                        <td><input type="text" class="form-control" placeholder="Color Code"></td>
+                                    </tr>
+                                </table>
+                            
+                            </form>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <button type="submit" class="btn btn-primary btn-block mt-3">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Link to Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js" integrity="sha384-9aIt2nRpC12Uk9gS7fFm2mk3MWKqMS/XtAxhAYB5Df7ef2Sb3yzF5o6p8DW5Cj4C5" crossorigin="anonymous"></script>
+</body>
+</html>

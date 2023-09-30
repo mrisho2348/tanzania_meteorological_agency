@@ -67,13 +67,13 @@
                     </div>
                     
                     <!-- Time Marks Section -->
-                    <!-- <div class="form-group">
+                    <div class="form-group">
                         <label>Time Marks</label>
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Barograph">
                             <input type="text" class="form-control" placeholder="Anemograph">
                         </div>
-                    </div> -->
+                    </div>
                     
              
                     
@@ -92,7 +92,7 @@
                             <!-- Add a dropdown or radio button group to choose the section -->
                             <div class="input-group-append">
                                 <select class="form-control" id="sectionSelect">
-                                    <!-- <option value="MercuryBar">Mercury Bar</option> -->
+                                    <option value="MercuryBar">Mercury Bar</option>
                                     <option value="DigitalBar">Digital Bar</option>
                                 </select>
                             </div>
@@ -172,10 +172,10 @@
                             <label for="maxTemperature">Maximum Temperature (°C)</label>
                             <div class="input-group">
                                 <input type="number" class="form-control" id="maxTemperature" name="maxTemperature" placeholder="Enter maximum temperature">
-                                <!-- <div class="input-group-append">
+                                <div class="input-group-append">
                                     <button type="button" class="btn btn-info" hx-get="/read-max-temperature">Read</button>
                                     <button type="button" class="btn btn-danger" hx-get="/reset-max-temperature">Reset</button>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                         <!-- Minimum Temperature with Read and Reset options -->
@@ -183,10 +183,10 @@
                             <label for="minTemperature">Minimum Temperature (°C)</label>
                             <div class="input-group">
                                 <input type="number" class="form-control" id="minTemperature" name="minTemperature" placeholder="Enter minimum temperature">
-                                <!-- <div class="input-group-append">
+                                <div class="input-group-append">
                                     <button type="button" class="btn btn-info" hx-get="/read-min-temperature">Read</button>
                                     <button type="button" class="btn btn-danger" hx-get="/reset-min-temperature">Reset</button>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                       
@@ -232,8 +232,8 @@
                             <label>Gunn Bellani Or Solarimeter</label>
                             <div class="input-group">
                                 <input type="number" class="form-control" placeholder="Reading">
-                                <!-- <button type="button" class="btn btn-info" hx-get="/read-reading">Read</button>
-                                <button type="button" class="btn btn-danger" hx-get="/reset-reading">Reset</button> -->
+                                <button type="button" class="btn btn-info" hx-get="/read-reading">Read</button>
+                                <button type="button" class="btn btn-danger" hx-get="/reset-reading">Reset</button>
                             </div>
                         </div>
                         <!-- Outdoor Section -->
@@ -256,14 +256,14 @@
                             <!-- </div>
                         </div> -->
                               <!-- Time Marks (1200 UTC) with Thermo, Hygro, Rain Rec -->
-                              <!-- <div class="form-group">
+                              <div class="form-group">
                                 <label>Time Marks (1200 UTC)</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="Thermo">
                                     <input type="text" class="form-control" placeholder="Hygro">
                                     <input type="text" class="form-control" placeholder="Rain Rec">
                                 </div>
-                            </div> -->
+                            </div>
                         
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
